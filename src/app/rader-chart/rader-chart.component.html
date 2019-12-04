@@ -1,0 +1,23 @@
+
+<svg [attr.height]="height" [attr.width]="width">
+   
+  
+  <!-- star -->
+<polygon id="star" [attr.points]="startPoints" style="fill:#AEBAE0;stroke: #9DA3BE;stroke-width:1"></polygon>
+
+  <!-- <circle [attr.cx]="outerCircle.cx" [attr.cy]="outerCircle.cy" [attr.r]="outerCircle.cr" stroke="black" stroke-width="1" fill="white" /> -->
+  <!-- Start Circle -->
+  <!-- <circle [attr.cx]="startCircle.cx" [attr.cy]="startCircle.cy" [attr.r]="startCircle.cr" stroke="black" stroke-width="1" fill="white" /> -->
+  <!-- Inner Circle -->
+  <circle [attr.cx]="innerCircle.cx" [attr.cy]="innerCircle.cy" [attr.r]="28" stroke="white" stroke-width="1" fill="white" />
+ <!-- Start points -->
+  <!-- <circle *ngFor="let point of startCircle.data" [attr.cx]="point.x" [attr.cy]="point.y" r="2" stroke="black" fill="white" stroke-width="1" /> -->
+ 
+  <!-- points Circles -->
+  
+  <circle  *ngFor="let point of points;let j = index" [attr.cx]="point.x" [attr.cy]="point.y" r="8" stroke="white" fill="white" stroke-width="1" />
+  <text *ngFor="let point of points;let i = index" style="font-size:15;" [attr.x]="point.x-3" [attr.y]="point.y+5" fill="black" >{{point.index}}</text>
+ 
+  <text *ngFor="let label of labels;let i = index" [attr.x]="circles[numberOfPoints+1].data[i].x" [attr.y]="circles[numberOfPoints+1].data[i].y" fill="black" >{{label}}</text>
+ 
+</svg>
